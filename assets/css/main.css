@@ -1,0 +1,125 @@
+/* ===================================
+    About
+======================================
+    Theme Name: Shaaer
+    Theme URI:
+    Author: University of Palestine
+    Author URI:
+    Description: Shaaer for Umrah and Hajj Agency website
+    Tags: one page, multipages, agency, css3, html5
+
+======================================
+    Table of Content
+======================================
+
+    - Fonts
+    - General
+    - Header And Navigation
+    - Slider
+    - Offers Search
+    - About
+    - Offers
+    - Clients Feedback
+    - FAQs
+    - Partners
+    - Footer
+    - Loader
+    - Media Queries
+
+======================================
+*/
+
+/* ===========================================
+    - Fonts: Import all weights of noor font
+=============================================*/
+
+@font-face {
+    font-family: 'noor';
+    src: url('../fonts/noor/noor_regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'noor';
+    src: url('../fonts/noor/noor_bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'noor';
+    src: url('../fonts/noor/noor_light.ttf') format('truetype');
+    font-weight: 100;
+}
+
+/* ===========================================
+    - General: General stylesheet
+=============================================*/
+:root {
+    --accent: #c2e853;
+    --white: #ffffff;
+    --milk: #fafbfd;
+    --gray: #7b8293;
+    --dark: #262831;
+    --light-blue: #b1dee4;
+    --light-blue-1: #bfeef7;
+    --light-blue-2: #b4e2ea;
+}
+
+* {
+    font-family: noor;
+}
+
+body {
+    background-color: var(--light-blue);
+    color: var(--dark);
+}
+
+p {
+    color: var(--gray);
+}
+
+.text-dark {
+    color: var(--dark);
+}
+
+.text-gray {
+    color: var(--gray);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.page {
+    background-color: var(--milk);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+/* ===========================================
+    - Header And Navigation
+=============================================*/
+
+
+
+
+
+/* ===========================================
+    - Footer: Footer stylesheet
+=============================================*/
+
+footer {
+    background-image: linear-gradient(210deg, #0a1d41, #55516e);
+    color: var(--white);
+}
+
+footer p {
+ color: var(--white);
+}
+
+footer a {
+    color: #ffffff;
+    opacity: 0.5;
+}
