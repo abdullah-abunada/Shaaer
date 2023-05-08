@@ -59,10 +59,13 @@
     --white: #ffffff;
     --milk: #fafbfd;
     --gray: #7b8293;
+    --beige : #f7f7f7;
     --dark: #262831;
     --light-blue: #b1dee4;
     --light-blue-1: #bfeef7;
     --light-blue-2: #b4e2ea;
+    --light-gray: #b5b5b6;
+    --dark-blue: #0a1d41;
 }
 
 * {
@@ -72,6 +75,8 @@
 body {
     background-color: var(--light-blue);
     color: var(--dark);
+    margin: 0;
+    font-size: 14px;
 }
 
 p {
@@ -90,21 +95,443 @@ p {
     color: var(--white);
 }
 
-.page {
+.container {
+    /* set relative to allow the absolute elements like .header to take with percentage (%)
+       based on the container not the screen width */
+    position: relative;
     background-color: var(--milk);
+    box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 12px 0 25px -8px rgba(123, 130, 147, 0.5),
+    -12px 0 25px -8px rgba(123, 130, 147, 0.5);
+
 }
 
 .bg-white {
     background-color: var(--white);
 }
 
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+/* ===========================================
+    - General: margins
+=============================================*/
+
+.mt-r-50 {
+    margin-top: -50px;
+}
+
+/* ===========================================
+    - General: Buttons
+=============================================*/
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+.btn-white-outline {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--white);
+    color: var(--white)
+}
+
+.btn-default-outline {
+    background: var(--white);
+    border: 1px solid var(--dark);
+    color: var(--dark)
+}
+
+.btn-accent {
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--dark)
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
 /* ===========================================
     - Header And Navigation
 =============================================*/
 
+.header {
+    position: absolute;
+    top: 0px;
+    margin: 20px auto;
+    width: 100%;
+    background-color: transparent;
+    z-index: 9999;
+}
 
+.header-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
+header .logo img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    float: right;
+    border-radius: 10px
+}
 
+header .logo .slogan {
+    float: right;
+    margin-right: 8px;
+    vertical-align: center;
+}
+
+header .logo .slogan p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--white);
+}
+
+header .logo .slogan p:first-child {
+    font-size: 18px;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+header nav {
+    width: 100%;
+    text-align: center; /* to center the ul element inside the nav */
+}
+
+header nav ul {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 16px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    position: relative;
+}
+
+header nav ul li a:hover {
+    color: var(--accent);
+}
+
+.header-login button {
+    margin-left: 20px;
+}
+
+/* ===========================================
+    - Slider
+=============================================*/
+
+main .hero {
+    min-height: 500px;
+    background-color: var(--dark-blue);
+    background-image: url("../../assets/images/slider.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    padding-top: 200px;
+}
+
+main .hero .title {
+    color: var(--white);
+    font-size: 3em;
+    text-align: center;
+}
+
+main .hero p {
+    color: var(--white);
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 1.4em;
+}
+
+main .hero a.btn {
+    display: block;
+    margin: 10px auto 80px;
+    width: fit-content;
+}
+
+/* ===========================================
+    - Offers Search
+=============================================*/
+
+main .search-box {
+    box-shadow: 1px 60px 21px -58px rgba(145,145,145,0.65);
+    -webkit-box-shadow: 1px 60px 21px -58px rgba(145,145,145,0.65);
+    -moz-box-shadow: 1px 60px 21px -58px rgba(145,145,145,0.65);
+    border-radius: 25px;
+    margin-bottom: 25px;
+    padding: 35px;
+}
+
+main .search-box .search-item {
+    display: inline-block;
+}
+
+main .search-box .search-input-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+main .search-box .search-input-container label i {
+    margin-left: 8px;
+    font-size: 1.2em;
+}
+
+main .search-box button {
+    font-size: 1.2em;
+    max-height: 60px;
+    max-width: 60px;
+}
+
+main .search-box input,select {
+    font-size: 1.1em;
+    border: none;
+    color: var(--gray);
+}
+
+/* ===========================================
+    - About
+=============================================*/
+
+section.intro {
+    margin-top: 50px;
+}
+
+section.intro article {
+    padding-right: 60px;
+    padding-left: 20px;
+}
+
+section.intro article h2 {
+    font-size: 2em;
+    width: 80%;
+}
+
+section.intro article p {
+    font-size: 1.2em;
+    text-align: justify;
+    line-height: 1.6em;
+}
+
+section.intro ol {
+    margin-bottom: 55px;
+}
+
+section.intro ol li {
+    font-size: 1.2em;
+    line-height: 2.8em;
+    list-style: none;
+}
+
+section.intro ol li span.list-icon{
+    font-size: 1em;
+    margin-left: 8px;
+    background-color: rgba(194, 232, 83, 0.5);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+section.intro a.btn {
+    width: fit-content;
+    min-width: 100px;
+}
+
+.avatar-adv {
+    width: 100%;
+}
+
+/* ===========================================
+    - Offers
+=============================================*/
+
+section.offers {
+    margin-top: 50px;
+}
+
+section.offers h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+section.offers .offer-item {
+    border-radius: 16px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+section.offers .offer-item img {
+    border-radius: 8px;
+    width: 100%;
+    max-height: 200px;
+}
+
+.dash-separator {
+    border-bottom: 1px dashed var(--light-gray);
+    margin: 8px auto;
+}
+
+.offer-features .offer-feature {
+    display: inline-block;
+    margin-left: 16px;
+}
+
+.offer-features .offer-feature i {
+    margin-left: 4px;
+}
+
+.offer-item ul.offer-timeline {
+    padding-right: 0;
+    margin: auto auto 24px;
+}
+
+.offer-item .offer-timeline li {
+    list-style: none;
+}
+
+.offer-item .offer-timeline li p i{
+    margin-left: 8px;
+}
+
+.offer-item .btn{
+    min-width: 100px;
+}
+
+section.offers a.explore {
+    display: block;
+    margin: 50px auto 50px;
+    width: fit-content;
+}
+
+/* ===========================================
+    - Clients Feedback
+=============================================*/
+
+.reviews h2 {
+    text-align: right;
+    font-size: 2em;
+    line-height: 1.4em;
+    margin-bottom: 50px;
+}
+
+.reviews .section-header .btn {
+    margin-top: 1.6em;
+    min-width: 100px;
+}
+
+.reviews .review-item img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.reviews .review-item {
+    background: var(--beige);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.reviews .review-item p.name {
+    font-size: 1em;
+    text-align: center;
+    color: var(--dark);
+}
+
+.reviews .review-item p.country {
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 0.5em;
+}
+
+.reviews .review-item p.review {
+    text-align: justify;
+    line-height: 1.8em;
+    margin-top: -5px;
+}
+
+ul.cursor {
+    margin: 34px auto;
+    text-align: center;
+    padding: 16px;
+}
+
+ul.cursor li {
+    height: 6px;
+    width: 32px;
+    margin: 4px;
+    border-radius: 3px;
+    background-color: var(--gray);
+    display: inline-block;
+    list-style: none;
+}
+
+ul.cursor li:hover {
+    background-color: var(--accent);
+    cursor: pointer;
+}
+
+/* ===========================================
+    - FAQs
+=============================================*/
+
+.faqs .section-header h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.faqs .section-content .faq-item {
+    background: var(--beige);
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.faqs .section-content p {
+    color: var(--dark);
+}
+
+.faqs .section-content a {
+    color: var(--gray);
+    text-decoration: none;
+}
+
+.faqs .section-content a:hover {
+    color: var(--accent);
+}
+
+/* ===========================================
+    - Partners
+=============================================*/
+
+.partners {
+    text-align: center;
+    margin: 50px auto 50px;
+}
+
+.partners img{
+    width: 100%;
+    margin-bottom: 16px;
+}
 
 /* ===========================================
     - Footer: Footer stylesheet
@@ -113,13 +540,112 @@ p {
 footer {
     background-image: linear-gradient(210deg, #0a1d41, #55516e);
     color: var(--white);
+    width: 100%;
+    overflow: auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+footer .logo-reverse img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    float: right;
+    border-radius: 10px
+}
+
+footer .logo-reverse .slogan {
+    float: right;
+    margin-right: 8px;
+    vertical-align: center;
+}
+
+footer .logo-reverse .slogan p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--white);
+}
+
+footer .logo-reverse .slogan p:first-child {
+    font-size: 18px;
+    margin-top: 4px;
+    font-weight: bold;
 }
 
 footer p {
- color: var(--white);
+    color: var(--white);
 }
 
 footer a {
     color: #ffffff;
     opacity: 0.5;
+    text-decoration: none;
+}
+
+footer a:hover {
+    opacity: 1;
+}
+
+footer .newsletter p {
+    line-height: 1.6em;
+}
+
+footer .newsletter form {
+    position: relative;
+    background: rgba(255, 255, 255, 50%);
+    padding: 8px 8px;
+    border-radius: 8px;
+    width: 90%;
+}
+
+footer .newsletter form input[type='submit'] {
+    float: left;
+    width: 35%;
+    position: relative;
+    max-height: 50px;
+    bottom: 2px;
+}
+
+footer .newsletter form input[type='email'] {
+    padding: 10px 4px;
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    width: 65%;
+    color: var(--white);
+}
+
+footer .newsletter form input[type='email']:focus {
+    outline: none;
+}
+
+.links-item p {
+    font-size: 1.2em;
+}
+
+.links-item ul {
+    padding-right: 0;
+}
+
+.links-item ul li {
+    list-style: none;
+    font-size: 1.1em;
+    line-height: 2em;
+}
+
+.footer-social-media {
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 50%);
+}
+
+.footer-social-media ul {
+    float: left;
+}
+
+.footer-social-media ul li {
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 16px;
+    font-size: 1.2em;
 }
