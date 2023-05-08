@@ -285,6 +285,12 @@ main .search-box .search-item {
     display: inline-block;
 }
 
+@media (max-width: 992px) {
+    main .search-box .search-input-container {
+        margin-bottom: 24px;
+    }
+}
+
 main .search-box .search-input-container label {
     display: block;
     margin-bottom: 8px;
